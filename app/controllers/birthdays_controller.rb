@@ -25,4 +25,19 @@ class BirthdaysController < ApplicationController
     render json: name.as_json
   end
 
+  def age 
+    first_name = params[:first_name]
+
+    name = Birthday.where("lower(first_name) = ?", first_name.downcase).first
+    
+    birthday_year = name["year"]
+    current_year = Date.today.year
+
+    age = current_year - birthday_year
+
+    info = "#{first_name} is currently #{age} years old."
+
+    render json: info.as_json
+  end
+
 end

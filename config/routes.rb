@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "birthdays" => "birthdays#index"
   post "birthdays" => "birthdays#create"
   get "birthdays/:first_name" => "birthdays#show"
+  get "age/:first_name" => "birthdays#age"
 end

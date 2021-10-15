@@ -5,12 +5,15 @@ POST http://localhost:3000/birthdays.json
 content-type: application/json
 
 {
-  "first_name": "Leon",
+  "first_name": "John",
   "last_name": "Shimizu",
-  "day": "20",
-  "month": "07",
-  "year": "1999"
+  "day": "24",
+  "month": "03",
+  "year": "1968"
 }
 
 ###
 GET http://localhost:3000/birthdays/stassie.json
+
+###
+GET http://localhost:3000/age/stassie.json
