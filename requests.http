@@ -1,3 +1,13 @@
 GET http://localhost:3000/birthdays.json
 
 ###
+POST http://localhost:3000/birthdays.json
+content-type: application/json
+
+{
+  "first_name": "Clai",
+  "last_name": "Crisostomo",
+  "day": "05",
+  "month": "03",
+  "year": "1998"
+}
