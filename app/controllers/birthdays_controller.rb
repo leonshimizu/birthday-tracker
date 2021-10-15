@@ -17,4 +17,10 @@ class BirthdaysController < ApplicationController
     render json: new_birthday.as_json
   end
 
+  def show # check to see if there's a way to check for a name in the db that isn't case sensitive
+    name = params[:first_name]
+    birthday = Birthday.find_by(first_name: name)
+    render json: birthday.as_json
+  end
+
 end
