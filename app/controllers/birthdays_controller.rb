@@ -43,11 +43,11 @@ class BirthdaysController < ApplicationController
   def update
     the_id = params[:id]
     birthday = Birthday.find_by(id: the_id)
-    birthday.first_name = params[:first_name]
-    birthday.last_name = params[:last_name]
-    birthday.day = params[:day]
-    birthday.month = params[:month]
-    birthday.year = params[:year]
+    birthday.first_name = params[:first_name] || birthday.first_name
+    birthday.last_name = params[:last_name] || birthday.last_name
+    birthday.day = params[:day] || birthday.day
+    birthday.month = params[:month] || birthday.month
+    birthday.year = params[:year] || birthday.year
     birthday.save
     render json: birthday.as_json
   end
