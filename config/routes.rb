@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post "birthdays" => "birthdays#create"
   get "birthdays/:first_name" => "birthdays#show"
   get "age/:first_name" => "birthdays#age"
+  patch "birthdays/:id" => "birthdays#update"
 end

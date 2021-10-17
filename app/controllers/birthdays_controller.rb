@@ -25,11 +25,11 @@ class BirthdaysController < ApplicationController
     render json: name.as_json
   end
 
-  def age 
+  def age # make it more specific and make it find the exact age (days, months, and years)
     first_name = params[:first_name]
 
     name = Birthday.where("lower(first_name) = ?", first_name.downcase).first
-    
+
     birthday_year = name["year"]
     current_year = Date.today.year
 
@@ -38,6 +38,18 @@ class BirthdaysController < ApplicationController
     info = "#{first_name} is currently #{age} years old."
 
     render json: info.as_json
+  end
+
+  def update
+    the_id = params[:id]
+    birthday = Birthday.find_by(id: the_id)
+    birthday.first_name = params[:first_name]
+    birthday.last_name = params[:last_name]
+    birthday.day = params[:day]
+    birthday.month = params[:month]
+    birthday.year = params[:year]
+    birthday.save
+    render json: birthday.as_json
   end
 
 end

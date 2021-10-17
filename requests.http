@@ -5,11 +5,11 @@ POST http://localhost:3000/birthdays.json
 content-type: application/json
 
 {
-  "first_name": "John",
-  "last_name": "Shimizu",
-  "day": "24",
-  "month": "03",
-  "year": "1968"
+  "first_name": "Orion",
+  "last_name": "Perez",
+  "day": "26",
+  "month": "08",
+  "year": "2000"
 }
 
 ###
@@ -17,3 +17,15 @@ GET http://localhost:3000/birthdays/stassie.json
 
 ###
 GET http://localhost:3000/age/stassie.json
+
+###
+PATCH http://localhost:3000/birthdays/13
+content-type: application/json
+
+{
+  "first_name": "Test2",
+  "last_name": "Tester2",
+  "day": 1,
+  "month": 2,
+  "year": 3
+}
