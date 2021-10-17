@@ -52,4 +52,11 @@ class BirthdaysController < ApplicationController
     render json: birthday.as_json
   end
 
+  def destroy
+    birthday = Birthday.find_by(id: params[:id])
+    birthday.destroy
+
+    render json: {message: "You successfully deleted the birthday."}
+  end
+
 end

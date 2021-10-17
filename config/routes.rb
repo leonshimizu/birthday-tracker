@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "birthdays/:first_name" => "birthdays#show"
   get "age/:first_name" => "birthdays#age"
   patch "birthdays/:id" => "birthdays#update"
+  delete "birthdays/:id" => "birthdays#destroy"
 end
